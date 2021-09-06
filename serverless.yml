@@ -1,0 +1,65 @@
+service: ghadi-registration-serverless-stack
+
+useDotenv: true
+configValidationMode: error
+
+package:
+  individually: true
+  excludeDevDependencies: false
+
+plugins:
+  - serverless-bundle
+  - serverless-offline
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+  profile: client-auth
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - "ses:SendEmail"
+            - "ses:SendRawEmail"
+            - "ses:SendTemplatedEmail"
+            - "dynamodb:*"
+            - "sns:*"
+            - "sqs:*"
+          Resource: "*"
+          Condition:
+            ForAllValues:StringLike:
+              ses:Recipients:
+                - "ghadi@lereum.com"
+                - "mdallalghadi@gmail.com"
+
+functions:
+  sendToken:
+    handler: src/lambdas/sendToken.handler
+    events:
+      - http:
+          path: sendToken
+          method: post
+
+  checkToken:
+    handler: src/lambdas/checkToken.handler
+    events:
+      - http:
+          path: checkToken
+          method: post
+
+  sendSMSToken:
+    handler: src/lambdas/sendSMSToken.handler
+    events:
+      - http:
+          path: sendSMSToken
+          method: post
+
+  checkSMSToken:
+    handler: src/lambdas/checkSMSToken.handler
+    events:
+      - http:
+          path: checkSMSToken
+          method: post

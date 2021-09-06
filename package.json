@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.81",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/node": "^16.4.10",
+    "@types/qs": "^6.9.7",
+    "@types/uuid": "^8.3.1",
+    "serverless-bundle": "^4.4.0",
+    "serverless-dotenv-plugin": "^3.9.0",
+    "serverless-offline": "^8.0.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.28.0",
+    "amazon-cognito-identity-js": "^5.1.0",
+    "axios": "^0.21.1",
+    "bluebird": "^3.7.2",
+    "install": "^0.13.0",
+    "qs": "^6.10.1",
+    "unix-timestamp": "^0.2.0",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.9"
+  }
+}
