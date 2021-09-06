@@ -13,7 +13,7 @@ Acceptance Criteria :
 <!-- . 6-Given a user in the user verification page and the user validated his phone number ( SMS validation) and the user is valid ( please check the note A for a valid user ) and the password is valid ( and matching in 2 text fields ) Then the user is verified and redirected to login page -->
 
 <!-- 7-Given a user in the user verification page and the user validated his phone number ( SMS validation) and the user is not valid ( please check the notes for a valid user ) and the password is valid ( and matching in 2 text fields ) Then the user is redirected to a thank you page , and notified that the platform is not available for his country yet . notes : A) a user is valid if :(country and phone number are accepted) 1- IP and country are matching 2-phone number and phone number are matching 3- country is valid ————————————— B) An authenticated and valid user will be named as TRADER . —————————————————————————- -->
-
+test
 1-Given a user is trying to sign in and he didn't populate the user name or the password Then a message must be displayed in the missing field { email address cannot be empty or password cannot be empty }
 
 2-Given a user is trying to sign in and he entered a non-registered email then an incorrect credentials message must appear
